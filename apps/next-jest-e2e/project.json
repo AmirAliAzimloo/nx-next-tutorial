@@ -1,0 +1,9 @@
+{
+  "name": "next-jest-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/next-jest-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["next-jest"],
+  "// targets": "to see all targets run: nx show project next-jest-e2e --web",
+  "targets": {}
+}
