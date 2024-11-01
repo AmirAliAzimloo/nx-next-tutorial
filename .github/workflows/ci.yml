@@ -38,6 +38,9 @@ jobs:
       - run: pnpm exec cypress install
       - uses: nrwl/nx-set-shas@v4
 
+      - name: Reset NX Cache
+        run: pnpx nx reset
+      
       - name: Build Next.js Application
         run: pnpx nx run next-jest:build
       
