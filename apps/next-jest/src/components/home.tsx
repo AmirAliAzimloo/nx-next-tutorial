@@ -13,7 +13,7 @@ const Home = () => {
 
       <button
       onClick={()=>{
-        router.push('/todo');
+        router.push('todo');
       }}
       >
         Navigate to Todo Page
