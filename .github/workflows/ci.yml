@@ -61,4 +61,4 @@ jobs:
       # When you enable task distribution, run the e2e-ci task instead of e2e
       - run: |
           export CYPRESS_baseUrl=http://localhost:3000
-          pnpm exec nx affected -t lint test build e2e
+          pnpx nx run next-jest-e2e:e2e

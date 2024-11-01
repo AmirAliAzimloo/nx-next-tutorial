@@ -1,7 +1,7 @@
 export default function Index() {
   return (
    <div>
-    Home
+    <h1>welcome</h1>
    </div>
   );
 }
