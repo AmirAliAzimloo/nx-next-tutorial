@@ -15,8 +15,10 @@ const Todos = () => {
 
   return (
     <div>
-      
-    </div>
+      <ul>
+        {todos?.length > 0 && todos?.map((todos: any,index:number) => <li key={index}>{todos.title}</li>)}
+      </ul>
+    </div> 
   )
 }
 
