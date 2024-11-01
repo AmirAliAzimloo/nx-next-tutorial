@@ -4,18 +4,18 @@ function sum(a: number, b: number) {
   return a + b;
 }
 
-beforeAll(() => {
-  console.log('beforeAll');
-});
-beforeEach(() => {
-  console.log('beforeEach');
-});
-afterAll(() => {
-  console.log('afterAll');
-});
-afterEach(() => {
-  console.log('afterEach');
-});
+// beforeAll(() => {
+//   console.log('beforeAll');
+// });
+// beforeEach(() => {
+//   console.log('beforeEach');
+// });
+// afterAll(() => {
+//   console.log('afterAll');
+// });
+// afterEach(() => {
+//   console.log('afterEach');
+// });
 
 test('Adds 2+3 should be wqual to 5', () => {
   expect(sum(2, 3)).toBe(5);
