@@ -22,6 +22,20 @@ test('Test navigation to another route', () => {
   expect(mockPush).toHaveBeenCalledWith('todo');
 });
 
+test('Should navigate to "/todo" when button is clicked', () => {
+  const mockPush = jest.fn();
+  const useRouterMock = jest
+    .spyOn(require('next/navigation'), 'useRouter')
+    .mockReturnValue({ push: mockPush });
+
+  const { getByText } = render(<Home />);
+
+  fireEvent.click(getByText("Navigate to Todo Page"));
+  expect(mockPush).toHaveBeenCalledWith('todo');
+
+  useRouterMock.mockRestore();
+});
+
 // describe('Testing Home component', () => {
 //   beforeEach(() => {
 //     render(<Home />);
