@@ -1,3 +1,4 @@
+import Searchbar from "./components/search";
 
 export default function Home() {
   return (
@@ -6,7 +7,7 @@ export default function Home() {
         NEXT SCRAPPER
       </h1>
       <div className="w-full mb-8">
-        {/* <Searchbar /> */}
+        <Searchbar />
       </div>
       {/* <Products /> */}
     </main>
