@@ -42,7 +42,7 @@ jobs:
         run: pnpx nx run next-jest:build
       
       - name: Start Application
-        run: pnpx nx run next-jest:start
+        run: pnpx nx run next-jest:start &
 
       - name: Wait for Application to be Ready
         run: |
