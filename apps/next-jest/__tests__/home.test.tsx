@@ -17,4 +17,9 @@ describe("Testing Home component",()=>{
         const text = screen.getByRole("heading",{ level:1 });
         expect(text).toBeInTheDocument();
     });
+    
+    it("test the description",()=>{ 
+        const text = screen.getByTestId("desc");
+        expect(text.textContent).toMatch(/description/);
+    });
 })
