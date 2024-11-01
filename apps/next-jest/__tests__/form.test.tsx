@@ -42,8 +42,24 @@ describe('Testing Form component', () => {
   it('Fill the input note textbox to make button enabled', () => {
     const textInput = screen.getByPlaceholderText(/Enter a note/i);
     fireEvent.change(textInput,{ target: { value: 'Sample note' } });
-
+ 
     const addNoteButton = screen.getByRole('button');
     expect(addNoteButton).not.toBeDisabled();
   });
+
+  it("Test notes list",()=>{
+    const textInput = screen.getByPlaceholderText(/Enter a note/i);
+    const notesList = screen.getByTestId("notesList");
+    const addNoteButton = screen.getByRole('button');
+
+    expect(notesList.querySelectorAll("li")).toHaveLength(0);
+    
+    fireEvent.change(textInput,{ target: { value: 'Sample note 1' } });
+    fireEvent.click(addNoteButton)
+    fireEvent.change(textInput,{ target: { value: 'Sample note 2' } });
+    fireEvent.click(addNoteButton)
+
+    expect(notesList.querySelectorAll("li")).toHaveLength(2);
+    
+  })
 });
