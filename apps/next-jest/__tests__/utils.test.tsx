@@ -4,6 +4,19 @@ function sum(a: number, b: number) {
   return a + b;
 }
 
+beforeAll(() => {
+  console.log('beforeAll');
+});
+beforeEach(() => {
+  console.log('beforeEach');
+});
+afterAll(() => {
+  console.log('afterAll');
+});
+afterEach(() => {
+  console.log('afterEach');
+});
+
 test('Adds 2+3 should be wqual to 5', () => {
   expect(sum(2, 3)).toBe(5);
   expect(sum(2, 3)).not.toBe(6);
@@ -29,7 +42,14 @@ async function getResponse() {
   });
 }
 
-test('async getResponse should return Hello World', async () => {
-  const reponse = await getResponse();
-  expect(reponse).toEqual({ value: 'Hello World' });
+describe('Combine promise response value', () => {
+  test('async getResponse should return Hello World', async () => {
+    const reponse = await getResponse();
+    expect(reponse).toEqual({ value: 'Hello World' });
+  });
+
+  test('async getResponse should not return abcd', async () => {
+    const reponse = await getResponse();
+    expect(reponse).not.toEqual({ value: 'abcd' });
+  });
 });
