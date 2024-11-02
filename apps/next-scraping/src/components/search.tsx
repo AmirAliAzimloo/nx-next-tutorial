@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import { FormEvent, useState } from "react";
-// import {
-//   exportData,
-//   scrapeOlxProducts,
-// } from "@/actions/scrape-products-puppeteer";
+import {
+  exportData,
+  scrapeOlxProducts,
+} from "../actions/scrape-products-puppeteer";
 import useStore from "../hooks/useStore";
 
 const Searchbar = () => {
@@ -17,9 +17,9 @@ const Searchbar = () => {
     event.preventDefault();
     setIsLoading(true);
     try {
-    //   const product = await scrapeOlxProducts(searchPrompt);
-    //   console.log(product);
-    //   addProduct(product);
+      const product = await scrapeOlxProducts(searchPrompt);
+      console.log(product);
+      addProduct(product);
       setSearchPrompt("");
     } catch (error) {
       console.log(error);
