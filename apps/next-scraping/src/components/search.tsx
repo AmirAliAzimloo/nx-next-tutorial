@@ -5,13 +5,13 @@ import { FormEvent, useState } from "react";
 //   exportData,
 //   scrapeOlxProducts,
 // } from "@/actions/scrape-products-puppeteer";
-// import useStore from "@/hooks/olx-products";
+import useStore from "../hooks/useStore";
 
 const Searchbar = () => {
   const [searchPrompt, setSearchPrompt] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-//   const addProduct = useStore((state: any) => state.addProduct);
-//   const products = useStore((state: any) => state.products);
+  const addProduct = useStore((state: any) => state.addProduct);
+  const products = useStore((state: any) => state.products);
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
@@ -56,11 +56,11 @@ const Searchbar = () => {
           {isLoading ? "Scraping..." : "Scrape"}
         </button>
         <button
-        //   disabled={!products?.length || isLoading}
+          disabled={!products?.length || isLoading}
           onClick={exportProducts}
-        //   className={`bg-gray-800 disabled:bg-gray-400 ${
-            // products?.length && !isLoading ? "cursor-pointer" : ""
-        //   } rounded-md shadow-xs px-5 py-3 text-white`}
+          className={`bg-gray-800 disabled:bg-gray-400 ${
+            products?.length && !isLoading ? "cursor-pointer" : ""
+          } rounded-md shadow-xs px-5 py-3 text-white`}
         >
           Export
         </button>
